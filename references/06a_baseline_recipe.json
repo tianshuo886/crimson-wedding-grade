@@ -1,0 +1,812 @@
+[
+    {
+        "setParameter": {
+            "adjustment": "color_adjust",
+            "parameter": "brilliance",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_adjust",
+            "parameter": "saturation",
+            "value": {
+                "number": 4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_adjust",
+            "parameter": "vibrance",
+            "value": {
+                "number": 12
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "balance",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "blending",
+            "value": {
+                "number": 55
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "global_hue",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "global_luminance",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "global_saturation",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "highlights_hue",
+            "value": {
+                "number": 45
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "highlights_luminance",
+            "value": {
+                "number": 2
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "highlights_saturation",
+            "value": {
+                "number": 3
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "midtones_hue",
+            "value": {
+                "number": 25
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "midtones_luminance",
+            "value": {
+                "number": 4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "midtones_saturation",
+            "value": {
+                "number": 8
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "shadows_hue",
+            "value": {
+                "number": 15
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "shadows_luminance",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "color_grading",
+            "parameter": "shadows_saturation",
+            "value": {
+                "number": 4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "dehaze",
+            "parameter": "amount",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "ai_amount",
+            "value": {
+                "number": 100
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "color",
+            "value": {
+                "number": 20
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "color_detail",
+            "value": {
+                "number": 50
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "luminance",
+            "value": {
+                "number": 12
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "luminance_detail",
+            "value": {
+                "number": 50
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "denoise",
+            "parameter": "method",
+            "value": {
+                "enumeration": "classical"
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "detail",
+            "parameter": "clarity",
+            "value": {
+                "number": 16
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "detail",
+            "parameter": "sharpen_amount",
+            "value": {
+                "number": 40
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "detail",
+            "parameter": "sharpen_radius",
+            "value": {
+                "number": 1
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "detail",
+            "parameter": "sharpen_threshold",
+            "value": {
+                "number": 0.5
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "detail",
+            "parameter": "texture",
+            "value": {
+                "number": 1
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "exposure",
+            "parameter": "exposure_ev",
+            "value": {
+                "number": 0.25
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "amount",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "exposure",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "film",
+            "value": {
+                "enumeration": "none"
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "format",
+            "value": {
+                "enumeration": "35mm"
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "halation",
+            "value": {
+                "number": 100
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "interimage",
+            "value": {
+                "number": 100
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "print",
+            "value": {
+                "enumeration": "matched"
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "print_exposure",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "print_tint",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "film_simulation",
+            "parameter": "print_warmth",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "grain",
+            "parameter": "amount",
+            "value": {
+                "number": 5
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "grain",
+            "parameter": "roughness",
+            "value": {
+                "number": 50
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "grain",
+            "parameter": "size",
+            "value": {
+                "number": 25
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_blue",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_cyan",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_green",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_magenta",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_orange",
+            "value": {
+                "number": 6
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_purple",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_red",
+            "value": {
+                "number": 4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "brightness_yellow",
+            "value": {
+                "number": 5
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_blue",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_cyan",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_green",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_magenta",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_orange",
+            "value": {
+                "number": -2
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_purple",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_red",
+            "value": {
+                "number": 4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "hue_yellow",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_blue",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_cyan",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_green",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_magenta",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_orange",
+            "value": {
+                "number": -3
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_purple",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_red",
+            "value": {
+                "number": 12
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "hsl",
+            "parameter": "saturation_yellow",
+            "value": {
+                "number": -2
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "rendering",
+            "parameter": "balance",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "rendering",
+            "parameter": "black_level",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "rendering",
+            "parameter": "contrast",
+            "value": {
+                "number": 1.28
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "blacks",
+            "value": {
+                "number": -8
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "contrast",
+            "value": {
+                "number": 16
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "edge_refinement",
+            "value": {
+                "number": 1
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "highlights",
+            "value": {
+                "number": -28
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "mask_diameter",
+            "value": {
+                "number": 5
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "shadows",
+            "value": {
+                "number": 10
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "tone",
+            "parameter": "whites",
+            "value": {
+                "number": 10
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "vignette",
+            "parameter": "amount",
+            "value": {
+                "number": -12
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "vignette",
+            "parameter": "feather",
+            "value": {
+                "number": 50
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "vignette",
+            "parameter": "highlights",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "vignette",
+            "parameter": "midpoint",
+            "value": {
+                "number": 50
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "vignette",
+            "parameter": "roundness",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "white_balance",
+            "parameter": "mode",
+            "value": {
+                "enumeration": "custom"
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "white_balance",
+            "parameter": "temperature_k",
+            "value": {
+                "number": 4950
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "white_balance",
+            "parameter": "tint",
+            "value": {
+                "number": -4
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "crop_rotate",
+            "parameter": "angle",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "crop_rotate",
+            "parameter": "crop_top",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "crop_rotate",
+            "parameter": "crop_bottom",
+            "value": {
+                "number": 100
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "crop_rotate",
+            "parameter": "crop_left",
+            "value": {
+                "number": 0
+            }
+        }
+    },
+    {
+        "setParameter": {
+            "adjustment": "crop_rotate",
+            "parameter": "crop_right",
+            "value": {
+                "number": 100
+            }
+        }
+    }
+]
