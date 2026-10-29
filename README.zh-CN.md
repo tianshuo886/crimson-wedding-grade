@@ -123,6 +123,8 @@
    * 适用于：新娘肖像、新郎肖像、仪式双人合影等核心人像。
    * **终版成片依据**：人像部分经过像素蛋糕进行精细微磨皮、骨骼微液化与**最终构图重新裁切**，**最终交付以像素蛋糕导出的版本为主**。
 
+![双轨交付与终版成片庆贺](docs/assets/09_wedding_celebration_mascots.jpg)
+
 ---
 
 ## 核心特性与技术规范
@@ -158,7 +160,8 @@ crimson-wedding-grade/
 │       ├── 05_color_science_swatches.png
 │       ├── 06_tea_ceremony_embroidery_before_after.jpg
 │       ├── 07_groom_attire_bedroom_before_after.jpg
-│       └── 08_mascot_chibi_banana.jpg
+│       ├── 08_mascot_chibi_banana.jpg
+│       └── 09_wedding_celebration_mascots.jpg
 ├── references/
 │   ├── crimson_baseline_recipe.json  # 完整的 90 项 Lucarne 核心基准 JSON
 │   ├── color_science_and_lab.md      # CIE L*a*b* 色度学标准与色相角规范

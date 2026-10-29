@@ -123,6 +123,8 @@ Color grading and facial retouching are fundamentally decoupled in imaging scien
    * For: Bride portraits, groom portraits, couple portraits.
    * **Master Version Policy**: Portraits undergo facial retouching, micro-smoothing, body contouring, and final re-cropping in 像素蛋糕 (PixCake); **the final client deliverables are the versions exported from PixCake**.
 
+![Dual-Track Wedding Delivery Celebration](docs/assets/09_wedding_celebration_mascots.jpg)
+
 ---
 
 ## Key Features
@@ -158,7 +160,8 @@ crimson-wedding-grade/
 │       ├── 05_color_science_swatches.png
 │       ├── 06_tea_ceremony_embroidery_before_after.jpg
 │       ├── 07_groom_attire_bedroom_before_after.jpg
-│       └── 08_mascot_chibi_banana.jpg
+│       ├── 08_mascot_chibi_banana.jpg
+│       └── 09_wedding_celebration_mascots.jpg
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science
