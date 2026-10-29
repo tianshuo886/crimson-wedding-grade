@@ -19,15 +19,22 @@ Still-life items such as red lacquer boxes, wedding vows, tea ceremonies, and fl
 
 ![Still-Life Before vs After](docs/assets/02_still_life_before_after.jpg)
 
-### 2. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
+### 2. Core Couple Portrait Scene Details: Bridal Silk Brocade, Gold Jewelry & Velvet Drapery
+The heart of our calibration effort was dedicated to couple portraits (DSCF0034). **Strictly avoiding any identifiable facial features**, we cropped core attire, hand interactions, and wedding bedroom details for 100% side-by-side verification:
+* **Bridal Silk Gown & Pure Gold Bracelet**: Under direct tungsten lighting, camera standard files suffered massive blown-out highlights on the champagne satin gown, washing away the embroidered rose petals and gold foil leaves while leaving hands muddy yellow. After 06A grading with highlight recovery (-70, EV -0.18), delicate relief floral patterns are preserved, skin tones achieve creamy satin clarity ($L^* = 0.61 \sim 0.65$), the pure gold wedding bracelet gleams with authentic luster, and the tuxedo lapels stand out in midnight black.
+* **Bedside Drapery & Gold Tassel Ornament**: With 1.28 oil-painting contrast, velvet shadows deepen to $L^* 28 \sim 32$, creating dramatic three-dimensional depth alongside the brilliant gold "喜上眉梢" bird and plum blossom pendant.
+
+![Couple Scene Details Before vs After](docs/assets/03_couple_details_before_after.jpg)
+
+### 3. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
 A direct crop from the top background of the master reference photo (DSCF0020), showing the three-dimensional gold double-happiness character (囍) and layered red velvet drapery. The camera standard file is flat and washed out; after 06A grading, velvet shadow luminance $L^*$ drops to 28~32, revealing dramatic three-dimensional folds, fine film grain, and rich 1.28 painterly contrast.
 
-![Backdrop Details Before vs After](docs/assets/03_background_curtain_before_after.jpg)
+![Backdrop Details Before vs After](docs/assets/04_background_curtain_before_after.jpg)
 
-### 3. Core Color Palette & Hue Angle Hard Constraint
-Color grading is converted into verifiable colorimetric benchmarks:
+### 4. Cute Cartoon Mascot Swatches & Hue Angle Hard Constraint
+Color grading is converted into verifiable colorimetric benchmarks, paired with cute line-art cartoon mascot graphics on a clean white background:
 
-![Color Science Swatches](docs/assets/04_color_science_swatches.jpg)
+![Color Science Swatches](docs/assets/05_color_science_swatches.png)
 
 * **Noble Crimson (大漆绛红)**: $L^* 36.0, a^* +38.5, b^* +28.0$ · Hue angle $37.4^\circ$, deep, dignified ceremonial red.
 * **Imperial Gold (龙凤纯金)**: $L^* 80.5, a^* +10.2, b^* +56.0$ · Pure gold foil reflection, neither green nor artificial orange.
@@ -127,11 +134,12 @@ crimson-wedding-grade/
 ├── README.zh-CN.md                   # Chinese documentation
 ├── LICENSE                           # MIT License
 ├── docs/
-│   └── assets/                       # White line-art architecture diagram and Before/After comparisons
+│   └── assets/                       # White line-art architecture diagram, Before/After comparisons & cartoon swatches
 │       ├── 01_pipeline_architecture_line_art.png
 │       ├── 02_still_life_before_after.jpg
-│       ├── 03_background_curtain_before_after.jpg
-│       └── 04_color_science_swatches.jpg
+│       ├── 03_couple_details_before_after.jpg
+│       ├── 04_background_curtain_before_after.jpg
+│       └── 05_color_science_swatches.png
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science

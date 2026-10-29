@@ -19,15 +19,22 @@
 
 ![静物调色前后对比](docs/assets/02_still_life_before_after.jpg)
 
-### 2. 场景布景细节：06A 浓郁沉稳油画质感
+### 2. 核心双人合影场景细节：婚服金缎、足金婚镯与丝绒布景
+本调色管线倾注最多心血打磨的正是核心双人合影（DSCF0034）。在**绝对不露出人物面部**的前提下，截取核心服饰、手部互动与婚房布景细节进行 100% 实测对比：
+* **婚服金缎与手腕金镯**：原片因现场暖光直射，香槟金礼服高光大面积过曝死白，金叶刺绣被冲刷殆尽，手部偏黄偏脏；调色后高光深度压制 (-70, EV -0.18)，礼服浮雕玫瑰与金箔暗纹细腻保全，手部呈现白皙丝缎质感（中位明度 $L^* = 0.61 \sim 0.65$），足金婚镯反光纯正璀璨，西装黑曜石般扎实挺拔。
+* **床头帷幔与纯金喜上眉梢吊坠**：1.28 油画对比度深度刻画，帷幔暗褶沉淀至 $L^* 28 \sim 32$，丝绒褶皱立体深邃，与纯金色泽的吊坠形成高贵典雅的明暗光影层次。
+
+![双人合影场景细节调色对比](docs/assets/03_couple_details_before_after.jpg)
+
+### 3. 核心参考片布景细节：06A 浓郁沉稳油画质感
 截取自核心参考片（DSCF0020）顶部的立体金色「囍」字与层叠红丝绒帷幔。相机直出原片帷幔浅红发飘，暗部散漫无力；经过 06A「绛红喜韵」调色后，帷幔深陷处明度 $L^*$ 压至 28~32，丝绒立体深邃，结合 1.28 油画渲染对比度与微胶片颗粒，呈现出沉稳典雅的大婚油画意境。
 
-![布景细节前后对比](docs/assets/03_background_curtain_before_after.jpg)
+![布景细节前后对比](docs/assets/04_background_curtain_before_after.jpg)
 
-### 3. 色彩科学色卡与色相角硬约束
-本技能将调色拆解为可量化、可验证的数字色度学标准：
+### 4. 萌系卡通色标卡与色相角硬约束
+本技能将调色拆解为可量化、可验证的数字色度学标准，并配以白底线条卡通萌系统计图：
 
-![色彩科学与色标卡](docs/assets/04_color_science_swatches.jpg)
+![色彩科学与色标卡](docs/assets/05_color_science_swatches.png)
 
 * **大漆绛红 (Noble Crimson)**：$L^* 36.0, a^* +38.5, b^* +28.0$ · 色相角 $37.4^\circ$，深沉庄重正红。
 * **龙凤纯金 (Imperial Gold)**：$L^* 80.5, a^* +10.2, b^* +56.0$ · 纯净金箔色，不偏绿也不发假橙。
@@ -127,11 +134,12 @@ crimson-wedding-grade/
 ├── README.zh-CN.md                   # 中文文档
 ├── LICENSE                           # MIT 许可证
 ├── docs/
-│   └── assets/                       # 白底线条架构图、调色前后实拍对比图与色标
+│   └── assets/                       # 白底线条架构图、调色前后实拍对比图与萌系色标
 │       ├── 01_pipeline_architecture_line_art.png
 │       ├── 02_still_life_before_after.jpg
-│       ├── 03_background_curtain_before_after.jpg
-│       └── 04_color_science_swatches.jpg
+│       ├── 03_couple_details_before_after.jpg
+│       ├── 04_background_curtain_before_after.jpg
+│       └── 05_color_science_swatches.png
 ├── references/
 │   ├── crimson_baseline_recipe.json  # 完整的 90 项 Lucarne 核心基准 JSON
 │   ├── color_science_and_lab.md      # CIE L*a*b* 色度学标准与色相角规范
