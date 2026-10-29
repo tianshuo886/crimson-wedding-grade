@@ -2,52 +2,55 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-**Crimson Wedding Grade** (`crimson-wedding-grade`) is a specialized Claude Code skill and automated RAW color grading pipeline for wedding and bridal portrait photography, distilled from real-world Fuji X-T2 RAW post-production within [Lucarne](https://lucarne.app).
+**Crimson Wedding Grade** (`crimson-wedding-grade`) is a specialized Claude Code skill and automated RAW color grading pipeline for wedding and portrait photography, distilled from real-world Fuji X-T2 RAW post-production within [Lucarne](https://lucarne.app).
 
 It achieves a refined, celebratory painterly aesthetic: deep, noble crimson wedding reds without fluorescent orange or fuchsia cast, creamy skin tones with subtle golden warmth, rich contrast without muddiness, and an objective colorimetric target driven by CIE L\*a\*b\* science.
 
-![Pipeline Architecture](docs/assets/04_dual_track_pipeline_architecture.png)
+![Pipeline Architecture](docs/assets/02_pipeline_line_art_diagram.png)
 
 ---
 
-## Visual Showcases & Colorimetric Validation
+## Visual Showcases & Colorimetric Validation (Color Science & Swatches)
 
-> Note: To strictly safeguard personal privacy, all portrait images below have been masked across the eye level while preserving facial skin luminance, hair definition, warm golden highlights, gown lace details, and crimson backdrop purity for color grading review and technical reference.
+Abandoning subjective "guessing by eye", this pipeline validates color through **real still-life captures** and **rigorous CIE L\*a\*b\* color swatches**:
+
+![Still-Life and Color Swatches](docs/assets/01_still_life_crimson_swatches.jpg)
 
 ### 1. Still-Life Details & Gold Foil: Banishing Fluorescent Orange and Muddy Yellow
 Still-life items such as red lacquer boxes, wedding vows, tea ceremonies, and floral bouquets often suffer from warm tungsten ambient light and digital red clipping, turning garish orange or dull mustard yellow. **Crimson Wedding Grade** cools the color temperature (4580K), suppresses red luminance (-23), and reduces yellow saturation (-14) to lock the red hue angle strictly within **$36.5^\circ \sim 38.5^\circ$**, while gold foil shines with authentic, brilliant gold luster.
 
-![Still-Life Color Convergence](docs/assets/01_still_life_crimson_gold.jpg)
+### 2. Core Palette Swatches
+* **Noble Crimson (大漆绛红)**: $L^* 36.0, a^* +38.5, b^* +28.0$ · Hue angle $37.4^\circ$, deep, dignified ceremonial red.
+* **Imperial Gold (龙凤纯金)**: $L^* 80.5, a^* +10.2, b^* +56.0$ · Pure gold foil reflection, neither green nor artificial orange.
+* **Satin Cream (丝缎奶油)**: $L^* 63.5, a^* +15.5, b^* +18.0$ · Smooth golden highlights bridging skin and satin gown.
+* **Deep Brocade (深宫锦缎)**: $L^* 28.0, a^* +32.0, b^* +20.0$ · Shadow curtain red holding depth without turning muddy.
 
-### 2. Bridal Skin Tone & Facial Luminance Balance: Creamy Satin Glow
-Portraits strictly follow the reference benchmark (DSCF0020), utilizing Apple Vision face detection and localized photometry to align bride and groom facial skin median luminance within **$L^* = 0.61 \sim 0.65$**. Highlights are delicately warmed (midtones hue 25, highlights hue 45) to prevent blown-out flat whites while retaining bone structure contours.
-
-![Portrait Skin Normalization](docs/assets/02_bridal_portrait_skin_tone.jpg)
-
-### 3. Ambient Dim Rooms: Environment-First Lighting Balance
-In dark dressing rooms with mirror reflections and ring lights, brightening only the bride produces an artificial "flash cutout" look. The pipeline employs an **Environment-First strategy**: lifting global shadows (+38) with a wide, ultra-feathered background radial mask (+0.28 EV) to illuminate the entire room, then applying negative local masking (-0.70 EV) to the groom's overexposed ring-light highlights.
-
-![Ambient Dim Room Balance](docs/assets/03_ambient_dim_room_balance.jpg)
+### 3. Strict Hue Angle Hard Constraint
+Addressing typical digital camera color cast traps under warm lighting:
+* **$< 32^\circ$**: Magenta / Fuchsia (harsh neon cast breaking celebratory warmth)
+* **$36.5^\circ \sim 38.5^\circ$ (★ Target Range)**: Noble Crimson Grade, majestic lacquer and brocade red
+* **$> 43^\circ$**: Persimmon Orange / Fluorescent Plastic Orange (over-bright, cheap look)
 
 ---
 
 ## Industrial Dual-Engine Architecture: Color Science Meets AI Retouching
 
-In commercial portrait photography, a common misconception is: *"Can AI retouching apps (such as 像素蛋糕 / PixCake, Evoto, Photoshop) handle color grading on their own?"*
-
-The reality: **Color grading and facial retouching are fundamentally decoupled in imaging science, serving as complementary partners.**
+Color grading and facial retouching are fundamentally decoupled in imaging science, serving as complementary partners:
 
 | Dimension | Upstream: Claude Code + Lucarne (`crimson-wedding-grade`) | Downstream: 像素蛋糕 (PixCake) / Photoshop |
 | :--- | :--- | :--- |
 | **Film Industry Role** | **DIT / Digital Image Technician & Chief Colorist** | **Senior Beauty Retoucher & High-End Finisher** |
-| **Core Mission** | 14-bit RAW optical decoding, tonal grading, locking crimson hue angle, balancing ambient lighting ratios | Skeletal liquify, biometric high/low frequency smoothing, acne/blemish healing, wrinkle removal |
+| **Core Mission** | 14-bit RAW optical decoding, tonal grading, locking crimson hue angle, balancing ambient lighting ratios | Skeletal liquify, biometric high/low frequency smoothing, acne/blemish healing, wrinkle removal, **final cropping** |
 | **Data Domain** | Raw sensor voltages, linear dynamic range, color matrices, still-life decor | Facial mesh topology, muscle flow, feature proportions, clothing fabric creases |
-| **Output Deliverable**| **16-bit Uncompressed sRGB TIFF** (~137 MB each) + **8-bit JPG** | Final Master Album for Client Delivery |
+| **Output Deliverable**| **16-bit Uncompressed sRGB TIFF** (~137 MB each) + **8-bit JPG** | **Final Master Client Album** |
 
-### Why AI Retouching Apps Cannot Replace this Skill
-1. **Sensor Dynamic Range**: Fuji RAF contains up to 14 bits of linear data. Heavy shadow lifting (+38) and highlight recovery (-64) must be applied during RAW demosaicing to prevent posterization and color noise. Generic AI retouching engines use standard debayering and lack deep camera matrix calibration.
-2. **Still-Life is a Blind Spot for AI Retouchers**: Weddings contain vows, lacquer boxes, wedding shoes, rings, and banquet rooms. AI retouchers driven by face meshes cannot apply hue angle constraints to objects. This skill guarantees consistent color harmony across the entire shoot.
-3. **SaaS Credit Optimization**: Commercial retouching platforms charge per export credit. By batch grading in Lucarne for free locally, only approved close-up portraits are exported to 16-bit TIFF for retouching credits.
+### Master Deliverables Policy
+1. **Track A: Direct Delivery (8-bit JPG)**:
+   * For: Still life details, wedding vows, lacquer boxes, wide venue shots.
+   * Batch exported locally at quality 98; zero retouch credits required.
+2. **Track B: High-Dynamic Retouch (16-bit TIFF) $\rightarrow$ 像素蛋糕 (PixCake)**:
+   * For: Bride portraits, groom portraits, couple portraits.
+   * **Master Version Policy**: Portraits undergo facial retouching, micro-smoothing, body contouring, and final re-cropping in 像素蛋糕 (PixCake); **the final client deliverables are the versions exported from PixCake**.
 
 ---
 
@@ -64,9 +67,6 @@ The reality: **Color grading and facial retouching are fundamentally decoupled i
   - `detect_faces.swift`: High-speed bounding box extraction using Apple Vision (`VNDetectFaceRectanglesRequest`).
   - Coordinate Normalizer: Translates Vision coordinates into Lucarne's long-edge-normalized radial gradient masks.
   - `build_sheets.py`: Generates multi-column overview sheets and 100% crop skin texture inspection strips.
-- 📦 **Dual-Track Delivery**:
-  - **Direct Delivery (8-bit JPG)**: Quality 98, sRGB for still-life details, wide decor shots, and non-retouch portraits.
-  - **High-Dynamic Retouch (16-bit TIFF)**: Uncompressed 16-bit sRGB TIFFs (~137 MB each) for portrait shots requiring manual figure liquify or AI retouching in Photoshop / 像素蛋糕.
 
 ---
 
@@ -79,11 +79,9 @@ crimson-wedding-grade/
 ├── README.zh-CN.md                   # Chinese documentation
 ├── LICENSE                           # MIT License
 ├── docs/
-│   └── assets/                       # Architecture diagrams and privacy-masked showcases
-│       ├── 01_still_life_crimson_gold.jpg
-│       ├── 02_bridal_portrait_skin_tone.jpg
-│       ├── 03_ambient_dim_room_balance.jpg
-│       └── 04_dual_track_pipeline_architecture.png
+│   └── assets/                       # Line-art architecture diagram and color science swatches
+│       ├── 01_still_life_crimson_swatches.jpg
+│       └── 02_pipeline_line_art_diagram.png
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science
@@ -140,6 +138,7 @@ You can trigger the workflow simply by asking Claude:
 6. **Face Exposure Normalization**: Analyzes face skin luminance and balances subjects toward median $L^* = 0.61 \sim 0.65$.
 7. **Contact Sheet Review**: Builds `00_总览.jpg` and `01_皮肤100%_检查.jpg` for user approval.
 8. **Dual-Track Export**: Automatically exports 16-bit TIFFs for retouching and 8-bit JPEGs for final delivery.
+9. **Downstream PixCake Finalization**: Portraits are retouched and re-cropped in 像素蛋糕 (PixCake); **the PixCake export version serves as the final client delivery**.
 
 ---
 
