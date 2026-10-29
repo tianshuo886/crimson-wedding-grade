@@ -37,6 +37,50 @@ Color grading is converted into verifiable colorimetric benchmarks:
 
 ---
 
+## 💡 Color Grading Engineering Methodology: How to Build Your Own Style Skill
+
+The true value of this project is not just this single wedding recipe, but the reusable engineering blueprint for **transforming subjective artistic vision into a reproducible, automated AI Agent Skill**.
+
+Whether you want to formulate **film documentary, vintage cinematic, Nordic minimalist, cyberpunk, or fashion editorial**, you can replicate this 7-step engineering pipeline:
+
+```
+① Anchor Master Shot ➔ ② Measure CIE L*a*b* ➔ ③ Photometric Adaptation ➔ ④ Vision Photometry
+      ➔ ⑤ Human-in-Loop Guardrails ➔ ⑥ Decoupled Dual-Track ➔ ⑦ Package as Agent Skill
+```
+
+### Step 1: Establish a Single Anchor Master Shot
+* Select **one single photo** that best embodies your target lighting and aesthetic intention across hundreds of shots (e.g., DSCF0020).
+* Refine exposure, tone curves, rendering contrast (1.28), and micro-textures (clarity 16, sharpen 40, film grain, vignette) in your RAW engine to craft the canonical master recipe.
+
+### Step 2: Shift from Subjective Guesswork to CIE L\*a\*b\* Metrics
+* **Common Trap**: Applying master settings to other scenes often looks oversaturated. Intuition tempts photographers to lower contrast, clarity, and saturation—**resulting in flat, muddy, lifeless images**.
+* **Engineering Solution**: Measure CIE L\*a\*b\* using scripted analyzers. We discovered that still-life shots weren't "too contrasty"; their red luminance $L^*$ was inflated by +17 and hue was skewed orange ($44^\circ$).
+* **Surgical Precision**: While **strictly maintaining rendering contrast (1.28), clarity (16), and sharpness (40)**, we only adjusted HSL channels by suppressing red luminance (-23) and yellow saturation (-14). Red hue snapped back to $38.8^\circ$, restoring vibrant luxury without losing an ounce of painterly punch.
+
+### Step 3: Classify Scenes by Real-World Photometry
+No single preset works everywhere. Segment shots into 3–4 photometric adaptations:
+* **Detail / Still-Life (`detail`)**: De-yellowing and red luminance compression protecting lacquer and gold foil.
+* **Outdoor Backlit (`backlit`)**: Cooling white balance (4580K) and highlight compression (-38) recovering bridal veil lace.
+* **Ambient Dim Room (`dim_room`)**: **Environment-first strategy**. Lift global shadows (+38) with large feathered radial background masks before adjusting subjects, preventing artificial "spotlight cutout" looks.
+
+### Step 4: Vision-Driven Facial Exposure Normalization
+* Utilize macOS Apple Vision native frameworks to extract face bounding boxes at millisecond speeds.
+* Map coordinates to long-edge-normalized radial masks, measure facial median luminance, and converge subjects toward the target band ($L^* = 0.61 \sim 0.65$), eliminating stark lighting imbalances between couple portraits.
+
+### Step 5: Implement Human-in-the-Loop Guardrails
+* **Iron Rule**: Never hardcode facial skin smoothing or blemish spot-healing into presets.
+* Prompt the photographer interactively at runtime for smoothing intensity and blemish handling preferences.
+
+### Step 6: Decouple Colorist from Retoucher (Master Deliverables Policy)
+* **Dual-Track Split**: 8-bit JPGs for still life and wide decor; 16-bit uncompressed TIFFs for portrait subjects feeding into downstream AI retouchers (PixCake / Photoshop).
+* **Master Deliverables Rule**: After figure contouring, biometric micro-smoothing, and **manual re-cropping**, **the final client portrait deliverables are strictly based on the PixCake-exported versions**.
+
+### Step 7: Package into a Claude Code Skill and Standalone Git Repository
+* Formalize parameters into JSON (`references/`), tooling into CLI scripts (`scripts/`), and execution protocols into `SKILL.md`.
+* Once symlinked into `~/.claude/skills/`, any future photoshoot can trigger the full industrial pipeline with a single command.
+
+---
+
 ## Industrial Dual-Engine Architecture: Color Science Meets AI Retouching
 
 Color grading and facial retouching are fundamentally decoupled in imaging science, serving as complementary partners:
