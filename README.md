@@ -20,18 +20,32 @@ Still-life items such as red lacquer boxes, wedding vows, tea ceremonies, and fl
 ![Still-Life Before vs After](docs/assets/02_still_life_before_after.jpg)
 
 ### 2. Core Couple Portrait Scene Details: Bridal Silk Brocade, Gold Jewelry & Velvet Drapery
-The heart of our calibration effort was dedicated to couple portraits (DSCF0034). **Strictly avoiding any identifiable facial features**, we cropped core attire, hand interactions, and wedding bedroom details for 100% side-by-side verification:
-* **Bridal Silk Gown & Pure Gold Bracelet**: Under direct tungsten lighting, camera standard files suffered massive blown-out highlights on the champagne satin gown, washing away the embroidered rose petals and gold foil leaves while leaving hands muddy yellow. After 06A grading with highlight recovery (-70, EV -0.18), delicate relief floral patterns are preserved, skin tones achieve creamy satin clarity ($L^* = 0.61 \sim 0.65$), the pure gold wedding bracelet gleams with authentic luster, and the tuxedo lapels stand out in midnight black.
+The heart of our calibration effort was dedicated to couple portraits (DSCF0034). **Strictly avoiding any identifiable facial features**, we cropped core attire, hand interactions, and wedding bedroom details for 100% side-by-side verification (taken directly from `09_成品_全尺寸` master delivery deliverables):
+* **Bridal Silk Gown & Pure Gold Bracelet**: Under direct tungsten lighting, camera standard files suffered massive blown-out highlights on the champagne satin gown, washing away the embroidered rose petals and gold foil leaves while leaving hands muddy yellow ($b^* 10.9$). After 06A grading with highlight recovery (-70, EV -0.18), delicate relief floral patterns are preserved, skin tones achieve creamy satin clarity ($b^*$ down to $5.0$), the pure gold wedding bracelet gleams with authentic luster, and the tuxedo lapels stand out in obsidian midnight black ($L^*$ down to $22.3$).
 * **Bedside Drapery & Gold Tassel Ornament**: With 1.28 oil-painting contrast, velvet shadows deepen to $L^* 28 \sim 32$, creating dramatic three-dimensional depth alongside the brilliant gold "喜上眉梢" bird and plum blossom pendant.
 
 ![Couple Scene Details Before vs After](docs/assets/03_couple_details_before_after.jpg)
 
-### 3. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
+### 3. Tea Ceremony & Dragon-Phoenix Xiuhe Embroidery: Noble Crimson & Pure Gold Thread
+Sourced from the standing tea ceremony master deliverable (DSCF0038). Without exposing human faces, this validates traditional Chinese embroidery gold thread and crimson silk fabric under heavy tungsten illumination:
+* **Tea Ceremony Porcelain Cups & Hands**: Camera standard files suffered from yellow ambient light scatter, muddying white porcelain ($b^* 15.0$) and blending red tea coasters with cuffs; after grading, color temperature and HSL are surgically decoupled, banishing yellow contamination ($b^*$ down to $10.3$) so the white porcelain appears jade-like, the groom's Chinese tunic is obsidian and dignified, and dragon gold embroidery stands in sharp relief.
+* **Xiuhe Red Silk Skirt & Pure Gold Thread Embroidery**: The raw camera file exhibited flat, washed-out orange-red ($L^* 52.8$) with heavy yellow veil ($b^* 20.4$); after 06A grading, red luminance is deeply grounded ($L^* 48.6$), chroma is intensified ($C^* 68.2$), and yellow cast is eliminated ($b^*$ down to $17.5$), producing an authentic Suzhou gold embroidery texture.
+
+![Tea Ceremony & Gold Embroidery Before vs After](docs/assets/06_tea_ceremony_embroidery_before_after.jpg)
+
+### 4. Groom Formal Attire & Bedroom Dim-Room Ambient Balance: Banishing Clipping
+Sourced from the groom solo formal portrait (DSCF0035) and couple wedding bedroom (DSCF0030) master deliverables:
+* **Obsidian Tuxedo & Crimson Silk Tie (DSCF0035)**: Raw camera files suffered from washed-out gray shadows on the wool suit ($L^* 41.4$) and tungsten yellow cast ($b^* 15.1$); after 06A grading, the suit achieves deep obsidian black ($L^* 35.3$), yellow haze is eradicated ($b^*$ down to $9.9$), the white pleated shirt is pristine, and the crimson silk tie and rose boutonniere exhibit luxurious velvet sheen.
+* **Wedding Bedroom Dim-Room Lighting Balance (DSCF0030)**: Direct flash caused harsh 0.51% highlight blowout on foreground subjects while the background sank into pitch black; our environment-first strategy lifted global shadows (+38) with a background feathered radial mask (+0.28 EV), completely eliminating blown highlights and seamlessly blending red-and-gold satin bedding with warm ambient nightstand light.
+
+![Groom Attire & Bedroom Lighting Before vs After](docs/assets/07_groom_attire_bedroom_before_after.jpg)
+
+### 5. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
 A direct crop from the top background of the master reference photo (DSCF0020), showing the three-dimensional gold double-happiness character (囍) and layered red velvet drapery. The camera standard file is flat and washed out; after 06A grading, velvet shadow luminance $L^*$ drops to 28~32, revealing dramatic three-dimensional folds, fine film grain, and rich 1.28 painterly contrast.
 
 ![Backdrop Details Before vs After](docs/assets/04_background_curtain_before_after.jpg)
 
-### 4. Cute Cartoon Mascot Swatches & Hue Angle Hard Constraint
+### 6. Cute Cartoon Mascot Swatches & Hue Angle Hard Constraint
 Color grading is converted into verifiable colorimetric benchmarks, paired with cute line-art cartoon mascot graphics on a clean white background:
 
 ![Color Science Swatches](docs/assets/05_color_science_swatches.png)
@@ -139,7 +153,9 @@ crimson-wedding-grade/
 │       ├── 02_still_life_before_after.jpg
 │       ├── 03_couple_details_before_after.jpg
 │       ├── 04_background_curtain_before_after.jpg
-│       └── 05_color_science_swatches.png
+│       ├── 05_color_science_swatches.png
+│       ├── 06_tea_ceremony_embroidery_before_after.jpg
+│       └── 07_groom_attire_bedroom_before_after.jpg
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science
