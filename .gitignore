@@ -3,9 +3,12 @@ __pycache__/
 *$py.class
 .DS_Store
 .env
+/tmp/
+
+# Ignore local photo renders except documentation assets
 *.jpg
 *.jpeg
 *.png
 *.tif
 *.tiff
-/tmp/
+!docs/assets/**
