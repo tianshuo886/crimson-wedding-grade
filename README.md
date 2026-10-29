@@ -6,30 +6,34 @@
 
 It achieves a refined, celebratory painterly aesthetic: deep, noble crimson wedding reds without fluorescent orange or fuchsia cast, creamy skin tones with subtle golden warmth, rich contrast without muddiness, and an objective colorimetric target driven by CIE L\*a\*b\* science.
 
-![Pipeline Architecture](docs/assets/02_pipeline_line_art_diagram.png)
+![Pipeline Architecture](docs/assets/01_pipeline_architecture_line_art.png)
 
 ---
 
-## Visual Showcases & Colorimetric Validation (Color Science & Swatches)
+## Real Photo Validation: Before vs After Comparisons
 
-Abandoning subjective "guessing by eye", this pipeline validates color through **real still-life captures** and **rigorous CIE L\*a\*b\* color swatches**:
+Moving away from subjective guesswork, this pipeline validates color through **real photo Before vs After comparisons** (100% focused on still life and scene decor, with zero exposed portraits):
 
-![Still-Life and Color Swatches](docs/assets/01_still_life_crimson_swatches.jpg)
+### 1. Still-Life Details: Banishing Warm Tungsten Yellow and Fluorescent Orange
+Still-life items such as red lacquer boxes, wedding vows, tea ceremonies, and floral bouquets often suffer from warm tungsten ambient light and digital red clipping, turning garish orange or dull mustard yellow. **Crimson Wedding Grade** cools the color temperature (4580K), suppresses red luminance (-23), and reduces yellow saturation (-14) to lock the red hue angle strictly at **$38.8^\circ$**, while gold foil shines with authentic, brilliant gold luster.
 
-### 1. Still-Life Details & Gold Foil: Banishing Fluorescent Orange and Muddy Yellow
-Still-life items such as red lacquer boxes, wedding vows, tea ceremonies, and floral bouquets often suffer from warm tungsten ambient light and digital red clipping, turning garish orange or dull mustard yellow. **Crimson Wedding Grade** cools the color temperature (4580K), suppresses red luminance (-23), and reduces yellow saturation (-14) to lock the red hue angle strictly within **$36.5^\circ \sim 38.5^\circ$**, while gold foil shines with authentic, brilliant gold luster.
+![Still-Life Before vs After](docs/assets/02_still_life_before_after.jpg)
 
-### 2. Core Palette Swatches
+### 2. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
+A direct crop from the top background of the master reference photo (DSCF0020), showing the three-dimensional gold double-happiness character (囍) and layered red velvet drapery. The camera standard file is flat and washed out; after 06A grading, velvet shadow luminance $L^*$ drops to 28~32, revealing dramatic three-dimensional folds, fine film grain, and rich 1.28 painterly contrast.
+
+![Backdrop Details Before vs After](docs/assets/03_background_curtain_before_after.jpg)
+
+### 3. Core Color Palette & Hue Angle Hard Constraint
+Color grading is converted into verifiable colorimetric benchmarks:
+
+![Color Science Swatches](docs/assets/04_color_science_swatches.jpg)
+
 * **Noble Crimson (大漆绛红)**: $L^* 36.0, a^* +38.5, b^* +28.0$ · Hue angle $37.4^\circ$, deep, dignified ceremonial red.
 * **Imperial Gold (龙凤纯金)**: $L^* 80.5, a^* +10.2, b^* +56.0$ · Pure gold foil reflection, neither green nor artificial orange.
 * **Satin Cream (丝缎奶油)**: $L^* 63.5, a^* +15.5, b^* +18.0$ · Smooth golden highlights bridging skin and satin gown.
 * **Deep Brocade (深宫锦缎)**: $L^* 28.0, a^* +32.0, b^* +20.0$ · Shadow curtain red holding depth without turning muddy.
-
-### 3. Strict Hue Angle Hard Constraint
-Addressing typical digital camera color cast traps under warm lighting:
-* **$< 32^\circ$**: Magenta / Fuchsia (harsh neon cast breaking celebratory warmth)
-* **$36.5^\circ \sim 38.5^\circ$ (★ Target Range)**: Noble Crimson Grade, majestic lacquer and brocade red
-* **$> 43^\circ$**: Persimmon Orange / Fluorescent Plastic Orange (over-bright, cheap look)
+* **Strict Hue Angle Hard Constraint**: Constrained strictly within **$36.5^\circ \sim 38.5^\circ$** (Noble Crimson), avoiding fuchsia ($< 32^\circ$) and neon orange ($> 43^\circ$).
 
 ---
 
@@ -79,9 +83,11 @@ crimson-wedding-grade/
 ├── README.zh-CN.md                   # Chinese documentation
 ├── LICENSE                           # MIT License
 ├── docs/
-│   └── assets/                       # Line-art architecture diagram and color science swatches
-│       ├── 01_still_life_crimson_swatches.jpg
-│       └── 02_pipeline_line_art_diagram.png
+│   └── assets/                       # White line-art architecture diagram and Before/After comparisons
+│       ├── 01_pipeline_architecture_line_art.png
+│       ├── 02_still_life_before_after.jpg
+│       ├── 03_background_curtain_before_after.jpg
+│       └── 04_color_science_swatches.jpg
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science
