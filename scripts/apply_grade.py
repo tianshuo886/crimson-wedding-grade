@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Batch apply 06A color grading to Lucarne catalog versions."""
+"""Batch apply 'Crimson Wedding Grade' (绛红喜韵) color grading to Lucarne catalog versions."""
 import argparse
 import json
 import os
-import re
 import subprocess
 import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REF_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), "references")
-BASELINE_JSON = os.path.join(REF_DIR, "06a_baseline_recipe.json")
+BASELINE_JSON = os.path.join(REF_DIR, "crimson_baseline_recipe.json")
 DETECT_SWIFT = os.path.join(SCRIPT_DIR, "detect_faces.swift")
 
 LC = os.environ.get("LUCARNE_CLI", "/Applications/Lucarne.app/Contents/Helpers/lucarne")
@@ -29,7 +28,6 @@ def run_lc(args, check=True):
 
 def get_doc(doc_id):
     out = run_lc(["doc", "get", str(doc_id)])
-    # Drop first line "revision N"
     lines = out.split("\n", 1)
     if len(lines) > 1:
         return json.loads(lines[1])
@@ -50,7 +48,7 @@ def sp(adj, param, val):
     return {"setParameter": {"adjustment": adj, "parameter": param, "value": val_obj}}
 
 
-def get_scene_ops(scene, family_preset="A"):
+def get_scene_ops(scene):
     ops = []
     if scene == "detail":
         # Crimson protection & de-yellowing for red lacquer / gold foil
@@ -87,10 +85,6 @@ def get_scene_ops(scene, family_preset="A"):
             sp("tone", "blacks", -4),
             sp("tone", "highlights", -64),
         ])
-    elif scene == "family":
-        from family_presets import FAMILY_PRESETS
-        p = FAMILY_PRESETS.get(family_preset.upper(), FAMILY_PRESETS["A"])
-        ops.extend(p)
     return ops
 
 
@@ -109,7 +103,6 @@ def build_face_masks(faces_tsv_line, is_portrait, smooth_level):
     hy = 1.0 if is_portrait else 4000.0 / 6000.0
 
     la_ops = []
-    # parse "x,y,w,h;..."
     boxes = [b.strip() for b in faces_tsv_line.split(";") if b.strip()]
     for i, b_str in enumerate(boxes):
         parts = [float(v) for v in b_str.split(",")]
@@ -149,26 +142,24 @@ def build_face_masks(faces_tsv_line, is_portrait, smooth_level):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Apply 06A grading pipeline.")
+    parser = argparse.ArgumentParser(description="Apply Crimson Wedding Grade pipeline.")
     parser.add_argument("doc_id", help="Lucarne document version ID")
-    parser.add_argument("--scene", choices=["portrait", "detail", "backlit", "dim_room", "family"],
+    parser.add_argument("--scene", choices=["portrait", "detail", "backlit", "dim_room"],
                         default="portrait", help="Scene type adaptation")
-    parser.add_argument("--family-preset", choices=["A", "B", "C", "D"], default="A",
-                        help="Preset variant for family series")
     parser.add_argument("--smooth", choices=["none", "light", "medium"], default="none",
                         help="Face smoothing level (defaults to none; interactive confirm needed)")
     parser.add_argument("--faces", help="Vision bbox string 'x,y,w,h;...'")
     parser.add_argument("--portrait-orient", action="store_true", help="Set if photo is portrait orientation")
     args = parser.parse_args()
 
-    # 1. Apply Baseline 06A
+    # 1. Apply Baseline Recipe
     with open(BASELINE_JSON, "r") as f:
         base_ops = json.load(f)
-    print(f"Applying 06A baseline ({len(base_ops)} ops) to doc {args.doc_id}...")
+    print(f"Applying Crimson Wedding baseline ({len(base_ops)} ops) to doc {args.doc_id}...")
     apply_ops(args.doc_id, base_ops)
 
     # 2. Apply Scene Overrides
-    scene_ops = get_scene_ops(args.scene, args.family_preset)
+    scene_ops = get_scene_ops(args.scene)
     if scene_ops:
         print(f"Applying scene '{args.scene}' adaptation ({len(scene_ops)} ops)...")
         apply_ops(args.doc_id, scene_ops)
