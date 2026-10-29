@@ -26,19 +26,19 @@ The heart of our calibration effort was dedicated to couple portraits (DSCF0034)
 
 ![Couple Scene Details Before vs After](docs/assets/03_couple_details_before_after.jpg)
 
-### 3. Tea Ceremony & Dragon-Phoenix Xiuhe Embroidery: Noble Crimson & Pure Gold Thread
-Sourced from the standing tea ceremony master deliverable (DSCF0038). Without exposing human faces, this validates traditional Chinese embroidery gold thread and crimson silk fabric under heavy tungsten illumination:
-* **Tea Ceremony Porcelain Cups & Hands**: Camera standard files suffered from yellow ambient light scatter, muddying white porcelain ($b^* 15.0$) and blending red tea coasters with cuffs; after grading, color temperature and HSL are surgically decoupled, banishing yellow contamination ($b^*$ down to $10.3$) so the white porcelain appears jade-like, the groom's Chinese tunic is obsidian and dignified, and dragon gold embroidery stands in sharp relief.
-* **Xiuhe Red Silk Skirt & Pure Gold Thread Embroidery**: The raw camera file exhibited flat, washed-out orange-red ($L^* 52.8$) with heavy yellow veil ($b^* 20.4$); after 06A grading, red luminance is deeply grounded ($L^* 48.6$), chroma is intensified ($C^* 68.2$), and yellow cast is eliminated ($b^*$ down to $17.5$), producing an authentic Suzhou gold embroidery texture.
+### 3. Wedding Bed Decor: Plush Dolls & "Zao Sheng Gui Zi" Plate Sets on Red Satin Bedding
+Sourced from the master bedroom delivery file (DSCF0027). **Strictly avoiding any identifiable facial features**, this focuses on traditional Chinese wedding symbols—plush wedding dolls on velvet pillows and "早生贵子" (Dates, Peanuts, Dried Longans, Lotus Seeds) auspicious plate sets:
+* **Wedding Dolls on Crimson Velvet Pillows**: Raw camera files suffered from washed-out, noisy orange-red hues, shallow pillow shadows, and yellow ambient tint on the doll clothes; after grading, red velvet shadow luminance $L^*$ settles to 32~36, grounding the rich crimson base, pure gold embroidery sparkles with metallic brilliance, and the dolls' faces are cleansed into smooth, luminous porcelain cream.
+* **"Zao Sheng Gui Zi" Red & Gold Auspicious Plate Sets on Satin Bedding**: Ceiling direct lights caused harsh highlight blowout across the red satin duvet, washing out traditional silk brocade textures; with highlight recovery (-70) and red luminance compression ($L^* 41.4$), specular flare is eliminated, gold filigree borders shine brilliantly, dates and peanuts gain plump three-dimensional texture, and silk ripples like flowing water.
 
-![Tea Ceremony & Gold Embroidery Before vs After](docs/assets/06_tea_ceremony_embroidery_before_after.jpg)
+![Wedding Bed Decor Dolls & Satin Bedding Before vs After](docs/assets/06_tea_ceremony_embroidery_before_after.jpg)
 
-### 4. Groom Formal Attire & Bedroom Dim-Room Ambient Balance: Banishing Clipping
-Sourced from the groom solo formal portrait (DSCF0035) and couple wedding bedroom (DSCF0030) master deliverables:
-* **Obsidian Tuxedo & Crimson Silk Tie (DSCF0035)**: Raw camera files suffered from washed-out gray shadows on the wool suit ($L^* 41.4$) and tungsten yellow cast ($b^* 15.1$); after 06A grading, the suit achieves deep obsidian black ($L^* 35.3$), yellow haze is eradicated ($b^*$ down to $9.9$), the white pleated shirt is pristine, and the crimson silk tie and rose boutonniere exhibit luxurious velvet sheen.
-* **Wedding Bedroom Dim-Room Lighting Balance (DSCF0030)**: Direct flash caused harsh 0.51% highlight blowout on foreground subjects while the background sank into pitch black; our environment-first strategy lifted global shadows (+38) with a background feathered radial mask (+0.28 EV), completely eliminating blown highlights and seamlessly blending red-and-gold satin bedding with warm ambient nightstand light.
+### 4. Bedroom Decor: Golden "喜上眉梢" Woodcut Ornament, Red Lanterns & Bedside Florals
+Sourced from bedroom vertical decor and floral arrangements (DSCF0027):
+* **Golden Bird & Double-Happiness Woodcut Ornament with Red Paper Lanterns**: Camera standard files suffered from yellow tungsten pollution that dulled gold highlights and washed out white walls and lanterns; after grading, yellow saturation is precisely suppressed and white balance is neutral, restoring the ornament to genuine golden brilliance ($L^* 80.5, b^* +56.0$), while the lanterns return to pure celebratory red against obsidian-deep velvet drapery.
+* **Bedside Wedding Florals (White Roses & Crimson Berries) with Champagne Silk Drape**: Raw camera files showed white roses corrupted by reddish reflections and muddy dark-tone noise, with bridal satin lacking gentle highlight roll-off; after grading, white roses achieve pristine neutral white, berries and hydrangeas show vivid tonal depth, and champagne silk folds gleam with creamy, smooth luster.
 
-![Groom Attire & Bedroom Lighting Before vs After](docs/assets/07_groom_attire_bedroom_before_after.jpg)
+![Golden Bird Ornament & Bedside Florals Before vs After](docs/assets/07_groom_attire_bedroom_before_after.jpg)
 
 ### 5. Scene Backdrop Folds: Rich 06A Oil-Painting Depth
 A direct crop from the top background of the master reference photo (DSCF0020), showing the three-dimensional gold double-happiness character (囍) and layered red velvet drapery. The camera standard file is flat and washed out; after 06A grading, velvet shadow luminance $L^*$ drops to 28~32, revealing dramatic three-dimensional folds, fine film grain, and rich 1.28 painterly contrast.
@@ -46,7 +46,7 @@ A direct crop from the top background of the master reference photo (DSCF0020), 
 ![Backdrop Details Before vs After](docs/assets/04_background_curtain_before_after.jpg)
 
 ### 6. Cute Cartoon Mascot Swatches & Hue Angle Hard Constraint
-Color grading is converted into verifiable colorimetric benchmarks, paired with cute line-art cartoon mascot graphics on a clean white background:
+Color grading is converted into verifiable colorimetric benchmarks, integrating cute chibi mascots generated directly by Google's native multimodal image generation model (Banana) on a clean white background (featuring the male DIT colorist with vintage camera and female retoucher with digital stylus):
 
 ![Color Science Swatches](docs/assets/05_color_science_swatches.png)
 
@@ -55,6 +55,8 @@ Color grading is converted into verifiable colorimetric benchmarks, paired with 
 * **Satin Cream (丝缎奶油)**: $L^* 63.5, a^* +15.5, b^* +18.0$ · Smooth golden highlights bridging skin and satin gown.
 * **Deep Brocade (深宫锦缎)**: $L^* 28.0, a^* +32.0, b^* +20.0$ · Shadow curtain red holding depth without turning muddy.
 * **Strict Hue Angle Hard Constraint**: Constrained strictly within **$36.5^\circ \sim 38.5^\circ$** (Noble Crimson), avoiding fuchsia ($< 32^\circ$) and neon orange ($> 43^\circ$).
+
+![Banana Model Generated Chibi Wedding Mascots](docs/assets/08_mascot_chibi_banana.jpg)
 
 ---
 
@@ -155,7 +157,8 @@ crimson-wedding-grade/
 │       ├── 04_background_curtain_before_after.jpg
 │       ├── 05_color_science_swatches.png
 │       ├── 06_tea_ceremony_embroidery_before_after.jpg
-│       └── 07_groom_attire_bedroom_before_after.jpg
+│       ├── 07_groom_attire_bedroom_before_after.jpg
+│       └── 08_mascot_chibi_banana.jpg
 ├── references/
 │   ├── crimson_baseline_recipe.json  # Complete 90-operation Lucarne baseline JSON
 │   ├── color_science_and_lab.md      # Target LAB values, hue angles & grading science
